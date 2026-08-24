@@ -1,0 +1,149 @@
+/* WHOLE PAGE */
+body {
+  margin: 0;
+  background-color: #f8f5ff;
+}
+
+
+/* MAIN TITLE */
+.projection-title {
+  font-weight: bold;
+  color: violet;
+  text-shadow: 2px 2px 4px #000000;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+/* STUDENT INFORMATION */
+.student-info {
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.student-info h2 {
+  margin-bottom: 0;
+}
+
+.student-info p {
+  font-size: 20px;
+}
+
+
+/* MONTH TITLE */
+.month-title {
+  border-bottom: 3px solid #8e44ad;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #5b2c6f;
+}
+
+
+/* CALENDAR DATE CELLS */
+.month-cell {
+  border-bottom: 1px solid #b8a9c9;
+  border-right: 1px solid #d8cfe3;
+  padding: 10px 8px;
+  min-height: 45px;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #f8f3ff
+  );
+
+  transition: 0.3s ease;
+}
+
+
+/* HOVER EFFECT */
+.month-cell:hover {
+  background: #eee2ff;
+  transform: scale(1.02);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* RIGHT SIDE WEEKLY PLANNER */
+.weekly-section {
+  background: transparent;
+
+  padding: 25px;
+
+  border-radius: 0;
+
+  min-height: 100vh;
+
+  box-shadow: none;
+}
+
+
+/* WEEKLY PLANNER TITLE */
+.weekly-title {
+  color: white;
+  text-shadow: 2px 2px 8px black;
+  letter-spacing: 3px;
+}
+
+
+/* WEEKLY PLANNER CARDS */
+.planner-card {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  background-color: rgba(20, 20, 50, 0.70);
+
+  padding: 12px;
+
+  margin-bottom: 10px;
+
+  border-radius: 12px;
+
+  color: white;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  transition: 0.3s ease;
+}
+
+
+/* CARD HOVER */
+.planner-card:hover {
+  transform: translateY(-3px);
+
+  background-color: rgba(50, 30, 80, 0.85);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* DAY COLUMN */
+.planner-day {
+  border-right: 2px solid rgba(255, 255, 255, 0.7);
+
+  font-weight: bold;
+
+  color: #ffd6ff;
+}
+
+
+/* MOBILE */
+@media (max-width: 550px) {
+
+  .weekly-section {
+    margin-top: 20px;
+    min-height: auto;
+  }
+
+  .projection-title {
+    font-size: 30px;
+  }
+
+  .student-info {
+    text-align: center;
+    margin-left: 0;
+  }
+
+}
