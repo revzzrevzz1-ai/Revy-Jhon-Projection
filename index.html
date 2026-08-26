@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>My Projection</title>
@@ -13,45 +14,105 @@
     rel="stylesheet"
   >
 
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-  <!-- MAIN TITLE -->
-  <h1 class="projection-title">MY PROJECTION</h1>
+
+  <!-- =====================================
+       HEADER
+  ====================================== -->
+
+  <header class="main-header">
+
+    <div class="header-content">
 
 
-  <!-- STUDENT INFORMATION -->
-  <div class="student-info">
-    <h2>Revy Jhon P. Ochea</h2>
-    <p>BSCPE 3-2</p>
-  </div>
+      <!-- STUDENT INFORMATION -->
+
+      <div class="student-profile">
+
+        <div class="profile-icon">
+          <i class="bi bi-person-fill"></i>
+        </div>
+
+        <div class="student-details">
+          <h4>Revy Jhon P. Ochea</h4>
+          <span>BSCPE 3-2</span>
+        </div>
+
+      </div>
 
 
-  <!-- MAIN CONTENT -->
+      <!-- PROJECT TITLE -->
+
+      <div class="project-heading">
+
+        <div class="header-line"></div>
+
+        <h1>MY PROJECTION</h1>
+
+        <p>OJT ATTENDANCE MANAGEMENT SYSTEM</p>
+
+        <div class="header-line"></div>
+
+      </div>
+
+
+      <!-- YEAR -->
+
+      <div class="header-badge">
+        2026
+      </div>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================
+       MAIN CONTENT
+  ====================================== -->
+
   <div class="container-fluid px-4 pb-4">
 
     <div class="row g-4 justify-content-between">
 
 
-      <!-- LEFT SIDE: OJT & ATTENDANCE -->
+      <!-- =====================================
+           LEFT SIDE
+           OJT ATTENDANCE
+      ====================================== -->
+
       <div class="col-md-7">
 
-        <!-- MAIN ATTENDANCE TITLE -->
+
         <h2 class="attendance-title">
           OJT ATTENDANCE & LOGGED
         </h2>
 
 
-        <!-- AUGUST 2026 -->
+        <!-- =====================================
+             AUGUST 2026
+        ====================================== -->
+
         <div class="month-title text-center">
           AUGUST 2026
         </div>
 
 
-        <!-- TABLE HEADER -->
         <div class="log-header">
 
           <div class="log-date">
@@ -62,355 +123,909 @@
             HOURS LOGGED
           </div>
 
-          <div class="log-status">
+          <div>
             STATUS / NOTES
           </div>
 
         </div>
 
 
-        <!-- AUGUST DATES -->
+        <!-- 17 AUGUST -->
 
         <div class="calendar-row">
+
           <div>17/08/26</div>
-          <div>5:00</div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              value="5:00"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            OJT
+          </div>
+
         </div>
 
+
+        <!-- 18 AUGUST -->
+
         <div class="calendar-row">
+
           <div>18/08/26</div>
-          <div>8:00</div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              value="8:00"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            OJT
+          </div>
+
         </div>
 
+
+        <!-- 19 AUGUST -->
+
         <div class="calendar-row">
+
           <div>19/08/26</div>
-          <div>8:00</div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              value="8:00"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            OJT
+          </div>
+
         </div>
 
+
+        <!-- 20 AUGUST -->
+
         <div class="calendar-row">
+
           <div>20/08/26</div>
-          <div>8:00</div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              value="8:00"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            OJT
+          </div>
+
         </div>
 
-        <div class="calendar-row">
+
+        <!-- 21 AUGUST -->
+
+        <div class="calendar-row special-row">
+
           <div>21/08/26</div>
+
           <div></div>
-          <div class="status-holiday">HOLIDAY</div>
+
+          <div class="status-holiday">
+            HOLIDAY
+          </div>
+
         </div>
 
-        <div class="calendar-row">
+
+        <!-- 22 AUGUST -->
+
+        <div class="calendar-row special-row">
+
           <div>22/08/26</div>
+
           <div></div>
-          <div class="status-weekend">SATURDAY</div>
+
+          <div class="status-weekend">
+            SATURDAY
+          </div>
+
         </div>
 
-        <div class="calendar-row">
+
+        <!-- 23 AUGUST -->
+
+        <div class="calendar-row special-row">
+
           <div>23/08/26</div>
+
           <div></div>
-          <div class="status-weekend">SUNDAY</div>
+
+          <div class="status-weekend">
+            SUNDAY
+          </div>
+
         </div>
 
+
+        <!-- 24 AUGUST -->
+
         <div class="calendar-row">
+
           <div>24/08/26</div>
-          <div>8:20</div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              value="8:20"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            OJT
+          </div>
+
         </div>
 
+
+        <!-- 25 AUGUST -->
+
         <div class="calendar-row">
+
           <div>25/08/26</div>
-          <div>8:20</div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              value="8:20"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            OJT
+          </div>
+
         </div>
 
+
+        <!-- 26 AUGUST -->
+
         <div class="calendar-row">
+
           <div>26/08/26</div>
-          <div>8:20</div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              value="8:20"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            OJT
+          </div>
+
         </div>
 
+
+        <!-- 27 AUGUST -->
+
         <div class="calendar-row">
+
           <div>27/08/26</div>
-          <div>8:20</div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              value="8:20"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            OJT
+          </div>
+
         </div>
 
+
+        <!-- 28 AUGUST -->
+
         <div class="calendar-row">
+
           <div>28/08/26</div>
-          <div>8:20</div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              value="8:20"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            OJT
+          </div>
+
         </div>
 
-        <div class="calendar-row">
+
+        <!-- 29 AUGUST -->
+
+        <div class="calendar-row special-row">
+
           <div>29/08/26</div>
+
           <div></div>
-          <div class="status-weekend">SATURDAY</div>
+
+          <div class="status-weekend">
+            SATURDAY
+          </div>
+
         </div>
 
-        <div class="calendar-row">
+
+        <!-- 30 AUGUST -->
+
+        <div class="calendar-row special-row">
+
           <div>30/08/26</div>
+
           <div></div>
-          <div class="status-weekend">SUNDAY</div>
+
+          <div class="status-weekend">
+            SUNDAY
+          </div>
+
         </div>
+
+
+        <!-- 31 AUGUST -->
 
         <div class="calendar-row">
+
           <div>31/08/26</div>
-          <div></div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              value=""
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            ABSENT
+          </div>
+
         </div>
 
 
-        <!-- SEPTEMBER 2026 -->
+        <!-- =====================================
+             SEPTEMBER 2026
+        ====================================== -->
+
         <div class="month-title text-center mt-4">
           SEPTEMBER 2026
         </div>
 
 
-        <!-- TABLE HEADER -->
         <div class="log-header">
 
-          <div class="log-date">DATE</div>
+          <div class="log-date">
+            DATE
+          </div>
 
-          <div class="log-hours">HOURS LOGGED</div>
+          <div class="log-hours">
+            HOURS LOGGED
+          </div>
 
-          <div class="log-status">STATUS / NOTES</div>
+          <div>
+            STATUS / NOTES
+          </div>
 
         </div>
 
 
+        <!-- 01 SEPTEMBER -->
+
         <div class="calendar-row">
+
           <div>01/09/26</div>
-          <div></div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            ABSENT
+          </div>
+
         </div>
 
+
+        <!-- 02 SEPTEMBER -->
+
         <div class="calendar-row">
+
           <div>02/09/26</div>
-          <div></div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            ABSENT
+          </div>
+
         </div>
 
+
+        <!-- 03 SEPTEMBER -->
+
         <div class="calendar-row">
+
           <div>03/09/26</div>
-          <div></div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            ABSENT
+          </div>
+
         </div>
 
+
+        <!-- 04 SEPTEMBER -->
+
         <div class="calendar-row">
+
           <div>04/09/26</div>
-          <div></div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            ABSENT
+          </div>
+
         </div>
 
-        <div class="calendar-row">
+
+        <!-- 05 SEPTEMBER -->
+
+        <div class="calendar-row special-row">
+
           <div>05/09/26</div>
+
           <div></div>
-          <div class="status-weekend">SATURDAY</div>
+
+          <div class="status-weekend">
+            SATURDAY
+          </div>
+
         </div>
 
-        <div class="calendar-row">
+
+        <!-- 06 SEPTEMBER -->
+
+        <div class="calendar-row special-row">
+
           <div>06/09/26</div>
+
           <div></div>
-          <div class="status-weekend">SUNDAY</div>
+
+          <div class="status-weekend">
+            SUNDAY
+          </div>
+
         </div>
+
+
+        <!-- 07 SEPTEMBER -->
 
         <div class="calendar-row">
+
           <div>07/09/26</div>
-          <div></div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            ABSENT
+          </div>
+
         </div>
 
 
-        <!-- OCTOBER 2026 -->
+        <!-- =====================================
+             OCTOBER 2026
+        ====================================== -->
+
         <div class="month-title text-center mt-4">
           OCTOBER 2026
         </div>
 
 
-        <!-- TABLE HEADER -->
         <div class="log-header">
 
-          <div class="log-date">DATE</div>
+          <div class="log-date">
+            DATE
+          </div>
 
-          <div class="log-hours">HOURS LOGGED</div>
+          <div class="log-hours">
+            HOURS LOGGED
+          </div>
 
-          <div class="log-status">STATUS / NOTES</div>
+          <div>
+            STATUS / NOTES
+          </div>
 
         </div>
 
 
+        <!-- 01 OCTOBER -->
+
         <div class="calendar-row">
+
           <div>01/10/26</div>
-          <div></div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            ABSENT
+          </div>
+
         </div>
 
+
+        <!-- 02 OCTOBER -->
+
         <div class="calendar-row">
+
           <div>02/10/26</div>
-          <div></div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            ABSENT
+          </div>
+
         </div>
 
-        <div class="calendar-row">
+
+        <!-- 03 OCTOBER -->
+
+        <div class="calendar-row special-row">
+
           <div>03/10/26</div>
+
           <div></div>
-          <div class="status-weekend">SATURDAY</div>
+
+          <div class="status-weekend">
+            SATURDAY
+          </div>
+
         </div>
 
-        <div class="calendar-row">
+
+        <!-- 04 OCTOBER -->
+
+        <div class="calendar-row special-row">
+
           <div>04/10/26</div>
+
           <div></div>
-          <div class="status-weekend">SUNDAY</div>
+
+          <div class="status-weekend">
+            SUNDAY
+          </div>
+
         </div>
 
+
+        <!-- 05 OCTOBER -->
+
         <div class="calendar-row">
+
           <div>05/10/26</div>
-          <div></div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            ABSENT
+          </div>
+
         </div>
+
+
+        <!-- 06 OCTOBER -->
 
         <div class="calendar-row">
+
           <div>06/10/26</div>
-          <div></div>
-          <div class="status-ojt">OJT</div>
+
+          <div>
+            <input
+              type="text"
+              class="hours-input"
+              placeholder="0:00"
+            >
+          </div>
+
+          <div class="status-value">
+            ABSENT
+          </div>
+
         </div>
+
 
       </div>
 
 
-      <!-- RIGHT SIDE: WEEKLY PLANNER -->
-      <div class="col-md-5 weekly-section">
 
-        <h3 class="weekly-title text-center fw-bold mb-3">
-          WEEKLY PLANNER
-        </h3>
+      <!-- =====================================
+           RIGHT SIDE
+      ====================================== -->
+
+      <div class="col-md-5 right-section">
 
 
-        <!-- MONDAY -->
-        <div class="planner-card">
-          <div class="row align-items-center">
+        <!-- OJT PROGRESS -->
 
-            <div class="col-4 planner-day">
-              MONDAY →
+        <div class="summary-container">
+
+          <div class="summary-header">
+
+            <div class="summary-icon">
+              <i class="bi bi-clock-history"></i>
             </div>
 
-            <div class="col-8 small">
-              * 07:30 AM – 09:00 AM<br>
-              (Faculty: ENIERGA, RIBERT)
-            </div>
+            <div>
 
-          </div>
-        </div>
+              <h3>OJT PROGRESS</h3>
 
+              <p>Internship Hours Tracker</p>
 
-        <!-- TUESDAY -->
-        <div class="planner-card">
-          <div class="row align-items-center">
-
-            <div class="col-4 planner-day">
-              TUESDAY →
-            </div>
-
-            <div class="col-8 small">
-              * 07:30 AM – 10:30 AM<br>
-              * 10:30 AM – 01:30 PM<br>
-              * 02:30 PM – 07:30 PM
             </div>
 
           </div>
+
+
+          <div class="hours-summary">
+
+
+            <!-- TARGET HOURS -->
+
+            <div class="hours-row">
+
+              <div class="summary-label">
+
+                <i class="bi bi-bullseye"></i>
+
+                <span>Target Hours</span>
+
+              </div>
+
+              <strong id="targetHours">
+                300:00:00
+              </strong>
+
+            </div>
+
+
+            <!-- TOTAL RENDERED -->
+
+            <div class="hours-row">
+
+              <div class="summary-label">
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                <span>Total Rendered</span>
+
+              </div>
+
+              <strong id="totalRendered">
+                0:00:00
+              </strong>
+
+            </div>
+
+
+            <!-- REMAINING -->
+
+            <div class="hours-row">
+
+              <div class="summary-label">
+
+                <i class="bi bi-hourglass-split"></i>
+
+                <span>Remaining</span>
+
+              </div>
+
+              <strong id="remainingHours">
+                300:00:00
+              </strong>
+
+            </div>
+
+
+          </div>
+
         </div>
 
 
-        <!-- WEDNESDAY -->
-        <div class="planner-card">
-          <div class="row align-items-center">
 
-            <div class="col-4 planner-day">
-              WEDNESDAY →
+        <!-- =====================================
+             WEEKLY PLANNER
+        ====================================== -->
+
+        <div class="weekly-section">
+
+
+          <div class="weekly-heading">
+
+            <div class="planner-heading-icon">
+              <i class="bi bi-calendar-week"></i>
             </div>
 
-            <div class="col-8 small">
-              * 04:00 PM – 05:30 PM
+            <div>
+
+              <h3 class="weekly-title">
+                WEEKLY PLANNER
+              </h3>
+
+              <p>Weekly Class Schedule</p>
+
             </div>
 
           </div>
-        </div>
 
 
-        <!-- THURSDAY -->
-        <div class="planner-card">
-          <div class="row align-items-center">
+          <!-- MONDAY -->
 
-            <div class="col-4 planner-day">
-              THURSDAY →
-            </div>
+          <div class="planner-card">
 
-            <div class="col-8 small">
-              * 07:30 AM – 09:00 AM<br>
-              * 10:30 AM – 01:30 PM<br>
-              * 06:00 PM – 09:00 PM
-            </div>
+            <div class="row align-items-center">
 
-          </div>
-        </div>
+              <div class="col-4 planner-day">
+                MONDAY →
+              </div>
 
+              <div class="col-8 planner-time">
 
-        <!-- FRIDAY -->
-        <div class="planner-card">
-          <div class="row align-items-center">
+                * 07:30 AM – 09:00 AM<br>
 
-            <div class="col-4 planner-day">
-              FRIDAY →
-            </div>
+                (Faculty: ENIERGA, RIBERT)
 
-            <div class="col-8 small">
-              * 07:30 AM – 10:30 AM<br>
-              * 04:00 PM – 05:30 PM<br>
-              * 06:00 PM – 09:00 PM
+              </div>
+
             </div>
 
           </div>
-        </div>
 
 
-        <!-- SATURDAY -->
-        <div class="planner-card">
-          <div class="row align-items-center">
+          <!-- TUESDAY -->
 
-            <div class="col-4 planner-day">
-              SATURDAY →
-            </div>
+          <div class="planner-card">
 
-            <div class="col-8 small">
-              * 10:30 AM – 01:30 PM
-            </div>
+            <div class="row align-items-center">
 
-          </div>
-        </div>
+              <div class="col-4 planner-day">
+                TUESDAY →
+              </div>
 
+              <div class="col-8 planner-time">
 
-        <!-- SUNDAY -->
-        <div class="planner-card">
-          <div class="row align-items-center">
+                * 07:30 AM – 10:30 AM<br>
 
-            <div class="col-4 planner-day">
-              SUNDAY →
-            </div>
+                * 10:30 AM – 01:30 PM<br>
 
-            <div class="col-8 small">
-              * NO CLASSES / FREE DAY
+                * 02:30 PM – 07:30 PM
+
+              </div>
+
             </div>
 
           </div>
+
+
+          <!-- WEDNESDAY -->
+
+          <div class="planner-card">
+
+            <div class="row align-items-center">
+
+              <div class="col-4 planner-day">
+                WEDNESDAY →
+              </div>
+
+              <div class="col-8 planner-time">
+
+                * 04:00 PM – 05:30 PM
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- THURSDAY -->
+
+          <div class="planner-card">
+
+            <div class="row align-items-center">
+
+              <div class="col-4 planner-day">
+                THURSDAY →
+              </div>
+
+              <div class="col-8 planner-time">
+
+                * 07:30 AM – 09:00 AM<br>
+
+                * 10:30 AM – 01:30 PM<br>
+
+                * 06:00 PM – 09:00 PM
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- FRIDAY -->
+
+          <div class="planner-card">
+
+            <div class="row align-items-center">
+
+              <div class="col-4 planner-day">
+                FRIDAY →
+              </div>
+
+              <div class="col-8 planner-time">
+
+                * 07:30 AM – 10:30 AM<br>
+
+                * 04:00 PM – 05:30 PM<br>
+
+                * 06:00 PM – 09:00 PM
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SATURDAY -->
+
+          <div class="planner-card">
+
+            <div class="row align-items-center">
+
+              <div class="col-4 planner-day">
+                SATURDAY →
+              </div>
+
+              <div class="col-8 planner-time">
+
+                * 10:30 AM – 01:30 PM
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SUNDAY -->
+
+          <div class="planner-card">
+
+            <div class="row align-items-center">
+
+              <div class="col-4 planner-day">
+                SUNDAY →
+              </div>
+
+              <div class="col-8 planner-time">
+
+                * NO CLASSES / FREE DAY
+
+              </div>
+
+            </div>
+
+          </div>
+
+
         </div>
+
 
       </div>
+
 
     </div>
 
   </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="script.js"></script>
+
 
 </body>
 
