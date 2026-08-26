@@ -3,18 +3,24 @@
 ===================================== */
 
 
-// TARGET HOURS
+/* =====================================
+   TARGET HOURS
+===================================== */
 
 const targetHours = 300;
 
 
-// GET ALL HOURS INPUT
+/* =====================================
+   GET ALL HOURS INPUT
+===================================== */
 
 const hourInputs =
   document.querySelectorAll(".hours-input");
 
 
-// SUMMARY ELEMENTS
+/* =====================================
+   SUMMARY ELEMENTS
+===================================== */
 
 const targetHoursElement =
   document.getElementById("targetHours");
@@ -28,7 +34,6 @@ const remainingHoursElement =
   document.getElementById("remainingHours");
 
 
-
 /* =====================================
    CONVERT HOURS TO MINUTES
 ===================================== */
@@ -39,15 +44,34 @@ function convertToMinutes(value) {
   value = value.trim();
 
 
-  // EMPTY = ZERO
+  /* =====================================
+     EMPTY VALUE
+  ===================================== */
 
   if (value === "") {
-    return 0;
+
+    return {
+
+      valid: true,
+
+      minutes: 0,
+
+      empty: true
+
+    };
+
   }
 
 
-  // EXAMPLE:
-  // 8 = 8 HOURS
+  /* =====================================
+     HOURS ONLY
+
+     EXAMPLES:
+
+     8
+     5
+     10
+  ===================================== */
 
   if (!value.includes(":")) {
 
@@ -56,59 +80,194 @@ function convertToMinutes(value) {
       Number(value);
 
 
+    /* =====================================
+       INVALID
+    ===================================== */
+
     if (
+
       isNaN(hours) ||
-      hours < 0
+
+      hours < 0 ||
+
+      !Number.isInteger(hours)
+
     ) {
-      return 0;
+
+      return {
+
+        valid: false,
+
+        minutes: 0,
+
+        empty: false
+
+      };
+
     }
 
 
-    return hours * 60;
+    return {
+
+      valid: true,
+
+      minutes: hours * 60,
+
+      empty: false
+
+    };
 
   }
 
 
-  // EXAMPLE:
-  // 8:30 = 8 HOURS 30 MINUTES
+  /* =====================================
+     HOURS WITH MINUTES
+
+     VALID:
+
+     8:00
+     8:20
+     7:30
+
+     INVALID:
+
+     8:60
+     8:61
+     8:99
+  ===================================== */
 
   const parts =
     value.split(":");
 
 
-  const hours =
-    Number(parts[0]);
+  /* =====================================
+     ONLY ONE COLON ALLOWED
+  ===================================== */
 
+  if (parts.length !== 2) {
 
-  const minutes =
-    Number(parts[1]);
+    return {
 
+      valid: false,
 
-  if (
-    isNaN(hours) ||
-    isNaN(minutes) ||
-    hours < 0 ||
-    minutes < 0 ||
-    minutes >= 60
-  ) {
+      minutes: 0,
 
-    return 0;
+      empty: false
+
+    };
 
   }
 
 
-  return (
-    hours * 60
-    +
-    minutes
-  );
+  const hoursPart =
+    parts[0];
+
+
+  const minutesPart =
+    parts[1];
+
+
+  /* =====================================
+     BOTH PARTS REQUIRED
+  ===================================== */
+
+  if (
+
+    hoursPart === "" ||
+
+    minutesPart === ""
+
+  ) {
+
+    return {
+
+      valid: false,
+
+      minutes: 0,
+
+      empty: false
+
+    };
+
+  }
+
+
+  const hours =
+    Number(hoursPart);
+
+
+  const minutes =
+    Number(minutesPart);
+
+
+  /* =====================================
+     VALIDATION
+
+     MINUTES MUST BE:
+
+     00 TO 59
+  ===================================== */
+
+  if (
+
+    isNaN(hours) ||
+
+    isNaN(minutes) ||
+
+    hours < 0 ||
+
+    minutes < 0 ||
+
+    minutes >= 60 ||
+
+    !Number.isInteger(hours) ||
+
+    !Number.isInteger(minutes)
+
+  ) {
+
+    return {
+
+      valid: false,
+
+      minutes: 0,
+
+      empty: false
+
+    };
+
+  }
+
+
+  /* =====================================
+     VALID TIME
+  ===================================== */
+
+  return {
+
+    valid: true,
+
+    minutes:
+      (hours * 60) +
+      minutes,
+
+    empty: false
+
+  };
 
 }
 
 
-
 /* =====================================
    FORMAT TIME
+
+   EXAMPLES:
+
+   300 HOURS
+   = 300:00:00
+
+   8 HOURS 20 MINUTES
+   = 8:20:00
 ===================================== */
 
 function formatTime(totalMinutes) {
@@ -123,17 +282,18 @@ function formatTime(totalMinutes) {
 
 
   return (
-    hours
-    +
-    ":"
-    +
-    String(minutes).padStart(2, "0")
-    +
+
+    hours +
+
+    ":" +
+
+    String(minutes).padStart(2, "0") +
+
     ":00"
+
   );
 
 }
-
 
 
 /* =====================================
@@ -146,7 +306,9 @@ function updateAttendance() {
   let totalMinutes = 0;
 
 
-  // CHECK ALL INPUTS
+  /* =====================================
+     CHECK EVERY INPUT
+  ===================================== */
 
   hourInputs.forEach(function (input) {
 
@@ -155,36 +317,90 @@ function updateAttendance() {
       input.value.trim();
 
 
-    const minutes =
+    /* =====================================
+       CONVERT INPUT
+    ===================================== */
+
+    const result =
       convertToMinutes(value);
 
 
-    // ADD TO TOTAL
-
-    totalMinutes += minutes;
-
-
-    // GET ROW
+    /* =====================================
+       GET CURRENT ROW
+    ===================================== */
 
     const row =
       input.closest(".calendar-row");
 
 
-    // GET STATUS
+    /* =====================================
+       GET STATUS
+    ===================================== */
 
     const status =
       row.querySelector(".status-value");
 
 
-    /* =============================
-       IF EMPTY OR ZERO
+    /* =====================================
+       INVALID
+
+       EXAMPLES:
+
+       8:60
+       8:61
+       8:99
+       abc
+       8::20
+    ===================================== */
+
+    if (!result.valid) {
+
+
+      status.textContent =
+        "INVALID";
+
+
+      status.classList.remove(
+        "ojt"
+      );
+
+
+      status.classList.remove(
+        "absent"
+      );
+
+
+      status.classList.add(
+        "invalid"
+      );
+
+
+      /*
+        INVALID HOURS ARE NOT
+        ADDED TO TOTAL RENDERED
+      */
+
+      return;
+
+    }
+
+
+    /* =====================================
+       EMPTY OR ZERO
+
+       EMPTY
+       0
+       0:00
+
        = ABSENT
-    ============================= */
+    ===================================== */
 
     if (
-      value === ""
-      ||
-      minutes === 0
+
+      result.empty ||
+
+      result.minutes === 0
+
     ) {
 
 
@@ -192,59 +408,82 @@ function updateAttendance() {
         "ABSENT";
 
 
-      status.classList.remove("ojt");
+      status.classList.remove(
+        "ojt"
+      );
 
 
-      status.classList.add("absent");
+      status.classList.remove(
+        "invalid"
+      );
+
+
+      status.classList.add(
+        "absent"
+      );
+
+
+      return;
 
     }
 
 
-    /* =============================
-       IF NOT ZERO
+    /* =====================================
+       VALID AND NOT ZERO
+
        = OJT
-    ============================= */
+    ===================================== */
 
-    else {
-
-
-      status.textContent =
-        "OJT";
+    status.textContent =
+      "OJT";
 
 
-      status.classList.remove("absent");
+    status.classList.remove(
+      "absent"
+    );
 
 
-      status.classList.add("ojt");
+    status.classList.remove(
+      "invalid"
+    );
 
-    }
+
+    status.classList.add(
+      "ojt"
+    );
+
+
+    /* =====================================
+       ADD VALID HOURS ONLY
+    ===================================== */
+
+    totalMinutes +=
+      result.minutes;
 
 
   });
 
 
-
-  /* =============================
-     TARGET MINUTES
-  ============================= */
+  /* =====================================
+     TARGET HOURS IN MINUTES
+  ===================================== */
 
   const targetMinutes =
     targetHours * 60;
 
 
-
-  /* =============================
-     REMAINING HOURS
-  ============================= */
+  /* =====================================
+     COMPUTE REMAINING HOURS
+  ===================================== */
 
   let remainingMinutes =
-    targetMinutes
-    -
+    targetMinutes -
     totalMinutes;
 
 
-
-  // DO NOT SHOW NEGATIVE
+  /* =====================================
+     DO NOT ALLOW NEGATIVE
+  ===================================== */
 
   if (remainingMinutes < 0) {
 
@@ -253,19 +492,25 @@ function updateAttendance() {
   }
 
 
-
-  /* =============================
-     UPDATE SUMMARY
-  ============================= */
-
+  /* =====================================
+     UPDATE TARGET HOURS
+  ===================================== */
 
   targetHoursElement.textContent =
     formatTime(targetMinutes);
 
 
+  /* =====================================
+     UPDATE TOTAL RENDERED
+  ===================================== */
+
   totalRenderedElement.textContent =
     formatTime(totalMinutes);
 
+
+  /* 
+     UPDATE REMAINING HOURS
+*/
 
   remainingHoursElement.textContent =
     formatTime(remainingMinutes);
@@ -274,26 +519,27 @@ function updateAttendance() {
 }
 
 
-
-/* =====================================
-   UPDATE WHILE TYPING
-===================================== */
+/* 
+   UPDATE WHILE USER IS TYPING
+ */
 
 hourInputs.forEach(function (input) {
 
 
   input.addEventListener(
+
     "input",
+
     updateAttendance
+
   );
 
 
 });
 
 
-
-/* =====================================
+/*
    RUN WHEN WEBSITE OPENS
-===================================== */
+ */
 
 updateAttendance();
