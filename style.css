@@ -9,9 +9,11 @@ body {
   min-height: 100%;
 }
 
+
 html {
   background: #30225d;
 }
+
 
 body {
   min-height: 100vh;
@@ -38,9 +40,9 @@ body {
 }
 
 
-/* IMPORTANT:
-   Para hindi takpan ng Bootstrap/container
-*/
+/* =========================================
+   TRANSPARENT CONTAINERS
+========================================= */
 
 .container,
 .container-fluid,
@@ -76,7 +78,9 @@ main,
 
 .header-content {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   padding: 20px 30px;
@@ -89,7 +93,9 @@ main,
 
 .student-profile {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 }
 
@@ -99,7 +105,9 @@ main,
   height: 48px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -109,7 +117,11 @@ main,
   color: white;
 
   background:
-    linear-gradient(135deg, #9b59b6, #6c3d88);
+    linear-gradient(
+      135deg,
+      #9b59b6,
+      #6c3d88
+    );
 
   border:
     1px solid rgba(255, 255, 255, 0.5);
@@ -220,6 +232,8 @@ main,
 
   color: white;
 
+  margin-top: 15px;
+
   margin-bottom: 5px;
 
   text-shadow:
@@ -280,8 +294,8 @@ main,
 }
 
 
-.log-date,
-.log-hours {
+.log-header div:nth-child(1),
+.log-header div:nth-child(2) {
   border-right:
     1px solid rgba(255, 255, 255, 0.6);
 }
@@ -299,7 +313,6 @@ main,
 
   text-align: center;
 
-  /* Transparent para makita ang background */
   background:
     rgba(255, 255, 255, 0.82);
 
@@ -319,6 +332,12 @@ main,
     1px solid #b8a9c9;
 
   min-height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 }
 
 
@@ -353,6 +372,10 @@ main,
   color: #242033;
 
   font-size: 14px;
+
+  font-weight: 500;
+
+  padding: 2px;
 }
 
 
@@ -379,6 +402,15 @@ main,
 
 .status-value.absent {
   color: #c0392b;
+}
+
+
+.status-value.invalid {
+  color: #ff0000;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
 }
 
 
@@ -420,11 +452,13 @@ main,
 .summary-icon,
 .planner-heading-icon {
   width: 40px;
+
   height: 40px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 10px;
@@ -543,16 +577,18 @@ main,
 }
 
 
+/* PLANNER CARD */
+
 .planner-card {
   background:
-    rgba(25, 25, 50, 0.75);
+    rgba(25, 25, 50, 0.85);
 
   border:
-    1px solid rgba(255, 255, 255, 0.25);
+    1px solid rgba(255, 255, 255, 0.35);
 
-  padding: 12px;
+  padding: 16px 14px;
 
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 
   border-radius: 12px;
 
@@ -564,6 +600,8 @@ main,
   backdrop-filter: blur(6px);
 
   transition: 0.3s ease;
+
+  min-height: 70px;
 }
 
 
@@ -571,12 +609,14 @@ main,
   transform: translateY(-3px);
 
   background:
-    rgba(65, 40, 100, 0.9);
+    rgba(65, 40, 100, 0.95);
 
   box-shadow:
-    0 8px 20px rgba(106, 172, 31, 0.45);
+    0 8px 20px rgba(0, 0, 0, 0.45);
 }
 
+
+/* DAY */
 
 .planner-day {
   border-right:
@@ -584,22 +624,37 @@ main,
 
   font-weight: bold;
 
+  font-size: 14px;
+
   color: #f0d5ff;
+
+  padding-right: 10px;
 }
 
 
+/* TIME */
+
 .planner-time {
-  font-size: 11px;
+  font-size: 12px;
+
+  line-height: 1.7;
 
   color: white;
+
+  padding-left: 14px;
+
+  font-weight: 500;
+
+  overflow-wrap: break-word;
 }
 
 
 /* =========================================
-   MOBILE
+   MOBILE RESPONSIVE
 ========================================= */
 
 @media (max-width: 768px) {
+
 
   .header-content {
     flex-direction: column;
@@ -627,5 +682,32 @@ main,
   .right-section {
     padding: 15px;
   }
+
+
+  .planner-card {
+    min-height: auto;
+
+    padding: 14px;
+  }
+
+
+  .planner-day {
+    border-right: none;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.35);
+
+    padding-bottom: 8px;
+
+    margin-bottom: 8px;
+  }
+
+
+  .planner-time {
+    padding-left: 0;
+
+    font-size: 12px;
+  }
+
 
 }
