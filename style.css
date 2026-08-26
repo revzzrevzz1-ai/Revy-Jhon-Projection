@@ -1,4 +1,6 @@
-/* WHOLE PAGE */
+/* =====================================
+   WHOLE PAGE
+===================================== */
 
 body {
   margin: 0;
@@ -6,227 +8,702 @@ body {
 }
 
 
-/* MAIN TITLE */
+/* =====================================
+   HEADER
+===================================== */
 
-.projection-title {
-  font-weight: bold;
-  color: #5b2c6f;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  margin-top: 20px;
-}
+.main-header {
+  width: 100%;
 
-
-/* STUDENT INFORMATION */
-
-.student-info {
-  font-family: "Times New Roman", Times, serif;
-  margin-left: 25px;
   margin-bottom: 20px;
-  color: #5b2c6f;
+
+  background: linear-gradient(
+    135deg,
+    #29243f,
+    #5b2c6f,
+    #392c5c
+  );
+
+  border-bottom: 4px solid #8e44ad;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-.student-info h2 {
-  margin-bottom: 0;
-  color: #5b2c6f;
+
+.header-content {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 22px 35px;
 }
 
-.student-info p {
+
+/* =====================================
+   STUDENT PROFILE
+===================================== */
+
+.student-profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 250px;
+}
+
+
+.profile-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 25px;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #8e44ad,
+    #c39bd3
+  );
+
+  border:
+    2px solid rgba(255, 255, 255, 0.5);
+}
+
+
+.student-details h4 {
+  margin: 0;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
   font-size: 20px;
-  color: #5b2c6f;
+
+  color: white;
 }
 
 
-/* OJT & ATTENDANCE TITLE */
+.student-details span {
+  color: #e8d5ff;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  font-size: 14px;
+}
+
+
+/* =====================================
+   PROJECT TITLE
+===================================== */
+
+.project-heading {
+  text-align: center;
+
+  flex: 1;
+}
+
+
+.project-heading h1 {
+  margin: 0;
+
+  color: white;
+
+  font-weight: bold;
+
+  letter-spacing: 4px;
+
+  font-size: 34px;
+
+  text-shadow:
+    2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+.project-heading p {
+  margin: 5px 0 0;
+
+  color: #e8d5ff;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  font-weight: bold;
+}
+
+
+.header-line {
+  width: 70px;
+
+  height: 2px;
+
+  margin: 5px auto;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d8b4fe,
+    transparent
+  );
+}
+
+
+/* =====================================
+   YEAR BADGE
+===================================== */
+
+.header-badge {
+  min-width: 70px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.4);
+
+  color: white;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+}
+
+
+/* =====================================
+   ATTENDANCE TITLE
+===================================== */
 
 .attendance-title {
   text-align: center;
+
   font-weight: bold;
+
   letter-spacing: 3px;
+
   color: #5b2c6f;
+
   margin-bottom: 5px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 
-/* MONTH TITLE */
+/* =====================================
+   MONTH TITLE
+===================================== */
 
 .month-title {
-  border-bottom: 3px solid #8e44ad;
-  padding: 10px;
-  margin-bottom: 10px;
+  border-bottom:
+    3px solid #8e44ad;
+
+  padding: 8px;
+
+  margin-bottom: 8px;
+
   font-weight: bold;
+
   letter-spacing: 2px;
+
   color: #5b2c6f;
 }
 
 
-/* TABLE HEADER */
+/* =====================================
+   TABLE HEADER
+===================================== */
 
 .log-header {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1.5fr;
-  background-color: rgba(20, 20, 50, 0.70);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 12px;
+
+  grid-template-columns:
+    1fr 1.2fr 1.5fr;
+
+  background-color:
+    rgba(20, 20, 50, 0.70);
+
+  border-radius: 10px;
+
   color: white;
+
   font-weight: bold;
-  padding: 12px 10px;
-  margin-bottom: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: 0.3s ease;
+
+  padding: 10px;
+
+  margin-bottom: 5px;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-
-/* HEADER HOVER */
-
-.log-header:hover {
-  transform: translateY(-3px);
-  background-color: rgba(50, 30, 80, 0.85);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-
-/* HEADER COLUMNS */
 
 .log-header div {
-  padding: 0 10px;
   text-align: center;
 }
 
-
-/* VERTICAL LINES */
 
 .log-date,
 .log-hours {
-  border-right: 2px solid rgba(255, 255, 255, 0.7);
+  border-right:
+    1px solid rgba(255, 255, 255, 0.7);
 }
 
 
-/* CALENDAR ROW */
+/* =====================================
+   CALENDAR ROW
+===================================== */
 
 .calendar-row {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1.5fr;
+
+  grid-template-columns:
+    1fr 1.2fr 1.5fr;
+
   text-align: center;
+
   background-color: white;
 }
 
 
-/* CALENDAR CELLS */
-
 .calendar-row div {
-  padding: 8px;
-  border-right: 1px solid #b8a9c9;
-  border-bottom: 1px solid #b8a9c9;
-  min-height: 38px;
-  transition: 0.3s ease;
+  padding: 6px;
+
+  border-right:
+    1px solid #b8a9c9;
+
+  border-bottom:
+    1px solid #b8a9c9;
+
+  min-height: 32px;
 }
 
-
-/* REMOVE LAST BORDER */
 
 .calendar-row div:last-child {
   border-right: none;
 }
 
 
-/* ROW HOVER */
-
 .calendar-row:hover {
   background-color: #eee2ff;
-  transform: scale(1.01);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 
-/* STATUS - NO COLORS */
+/* =====================================
+   EDITABLE HOURS
+===================================== */
 
-.status-ojt,
-.status-holiday,
-.status-weekend {
-  background-color: white;
+.hours-input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  color: #333;
+}
+
+
+.hours-input:focus {
+  background-color: #eee2ff;
+}
+
+
+/* =====================================
+   STATUS
+===================================== */
+
+.status-value {
   font-weight: bold;
 }
 
 
-/* RIGHT SIDE */
-
-.weekly-section {
-  background: transparent;
-  padding: 25px;
-  min-height: 100vh;
+.status-value.ojt {
+  color: #333;
 }
 
 
-/* WEEKLY PLANNER TITLE */
+.status-value.absent {
+  color: #c0392b;
+}
+
+
+.status-holiday,
+.status-weekend {
+  font-weight: bold;
+}
+
+
+/* =====================================
+   RIGHT SIDE
+===================================== */
+
+.right-section {
+  padding: 15px 25px 30px;
+}
+
+
+/* =====================================
+   OJT PROGRESS
+===================================== */
+
+.summary-container {
+  margin-bottom: 35px;
+}
+
+
+.summary-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+}
+
+
+.summary-icon {
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8e44ad,
+      #5b2c6f
+    );
+
+  box-shadow:
+    0 4px 10px rgba(91, 44, 111, 0.3);
+}
+
+
+.summary-header h3 {
+  margin: 0;
+
+  color: #5b2c6f;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+}
+
+
+.summary-header p {
+  margin: 0;
+
+  font-size: 12px;
+
+  color: #777;
+}
+
+
+/* =====================================
+   HOURS SUMMARY
+===================================== */
+
+.hours-summary {
+  width: 100%;
+
+  border:
+    1px solid #8e44ad;
+
+  background:
+    rgba(255, 255, 255, 0.95);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+.hours-row {
+  display: flex;
+
+  align-items: center;
+
+  min-height: 65px;
+
+  border-bottom:
+    1px solid #d5b6e8;
+}
+
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+
+.hours-row:hover {
+  background-color: #f3e8ff;
+}
+
+
+.summary-label {
+  width: 58%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 20px;
+
+  border-right:
+    2px solid #8e44ad;
+
+  color: #5b2c6f;
+
+  font-weight: bold;
+
+  font-size: 17px;
+}
+
+
+.summary-label i {
+  font-size: 19px;
+
+  color: #8e44ad;
+}
+
+
+.hours-row strong {
+  width: 42%;
+
+  padding: 15px 20px;
+
+  text-align: right;
+
+  color: #343a40;
+
+  font-size: 17px;
+}
+
+
+/* =====================================
+   WEEKLY PLANNER
+===================================== */
+
+.weekly-section {
+  padding: 0;
+}
+
+
+.weekly-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+
+.planner-heading-icon {
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5b2c6f,
+      #8e44ad
+    );
+}
+
 
 .weekly-title {
+  margin: 0;
+
+  text-align: left;
+
   color: #5b2c6f;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+
+  font-weight: bold;
+
   letter-spacing: 3px;
 }
 
 
-/* WEEKLY PLANNER CARDS */
+.weekly-heading p {
+  margin: 0;
+
+  font-size: 12px;
+
+  color: #777;
+}
+
+
+/* =====================================
+   PLANNER CARDS
+===================================== */
 
 .planner-card {
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  background-color: rgba(20, 20, 50, 0.70);
-  padding: 12px;
+  border:
+    1px solid rgba(255, 255, 255, 0.7);
+
+  background-color:
+    rgba(20, 20, 50, 0.70);
+
+  padding: 14px;
+
   margin-bottom: 10px;
+
   border-radius: 12px;
+
   color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3);
+
   transition: 0.3s ease;
 }
 
 
-/* CARD HOVER */
-
 .planner-card:hover {
   transform: translateY(-3px);
-  background-color: rgba(50, 30, 80, 0.85);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+
+  background-color:
+    rgba(50, 30, 80, 0.85);
 }
 
 
-/* DAY COLUMN */
-
 .planner-day {
-  border-right: 2px solid rgba(255, 255, 255, 0.7);
+  border-right:
+    2px solid rgba(255, 255, 255, 0.7);
+
   font-weight: bold;
+
   color: #ffd6ff;
 }
 
 
-/* MOBILE RESPONSIVE */
+.planner-time {
+  font-size: 13px;
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
 
 @media (max-width: 768px) {
 
-  .weekly-section {
-    margin-top: 20px;
-    min-height: auto;
+  .header-content {
+    flex-direction: column;
+
+    gap: 15px;
+
+    text-align: center;
+  }
+
+
+  .student-profile {
+    justify-content: center;
+  }
+
+
+  .project-heading h1 {
+    font-size: 26px;
+  }
+
+
+  .header-badge {
+    display: none;
+  }
+
+
+  .right-section {
     padding: 15px;
   }
 
-  .projection-title {
-    font-size: 30px;
-  }
-
-  .student-info {
-    text-align: center;
-    margin-left: 0;
-  }
 
   .log-header,
   .calendar-row {
-    grid-template-columns: 1fr 1fr 1.2fr;
+    grid-template-columns:
+      1fr 1fr 1.2fr;
+
     font-size: 12px;
   }
 
-  .attendance-title {
-    font-size: 22px;
+
+  .summary-label {
+    width: 60%;
+
+    font-size: 14px;
+
+    padding: 12px;
+  }
+
+
+  .hours-row strong {
+    width: 40%;
+
+    font-size: 14px;
+
+    padding: 12px;
   }
 
 }
