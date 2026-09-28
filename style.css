@@ -1,713 +1,2142 @@
-/* =========================================
-   RESET + WHOLE BACKGROUND
-========================================= */
+/* =========================================================
+   MY PROJECTION
+   OJT ATTENDANCE MANAGEMENT SYSTEM
+   COMPLETE STYLE.CSS
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   FONT
+   ALL LETTERS + NUMBERS = TIMES NEW ROMAN
+========================================================= */
 
 html,
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
+body,
+button,
+input,
+textarea,
+select,
+table,
+th,
+td,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+label {
+    font-family: "Times New Roman", Times, serif !important;
 }
 
+
+/* Keep Bootstrap Icons working */
+.bi {
+    font-family: bootstrap-icons !important;
+}
+
+
+/* =========================================================
+   HTML
+========================================================= */
 
 html {
-  background: #30225d;
+    min-height: 100%;
+    background: #30225d;
 }
 
+
+/* =========================================================
+   BODY
+========================================================= */
 
 body {
-  min-height: 100vh;
+    min-height: 100vh;
+    color: white;
 
-  background:
-    radial-gradient(
-      circle at bottom left,
-      #3fb0b0 0%,
-      #38677e 30%,
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      #3d6686 0%,
-      #354f76 45%,
-      #30225d 100%
-    );
+    background:
+        radial-gradient(
+            circle at bottom left,
+            #3fb0b0 0%,
+            #38677e 30%,
+            transparent 60%
+        ),
+        linear-gradient(
+            135deg,
+            #3d6686 0%,
+            #354f76 45%,
+            #30225d 100%
+        );
 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-  color: white;
+    overflow-x: hidden;
 }
 
 
-/* =========================================
-   TRANSPARENT CONTAINERS
-========================================= */
+/* =========================================================
+   SCROLLBAR
+========================================================= */
 
-.container,
-.container-fluid,
-.row,
-main,
-.content,
-.main-content {
-  background: transparent !important;
+html {
+    scrollbar-width: auto;
+    scrollbar-color: #9b59b6 #1b2344;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1b2344;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #b46be3, #6c3d88);
+    border-radius: 20px;
+    border: 2px solid #1b2344;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #c57ae8;
 }
 
 
-/* =========================================
+/* =========================================================
+   WELCOME / LOGIN SCREEN
+========================================================= */
+
+#welcomeScreen {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at bottom left,
+            #3fb0b0 0%,
+            #38677e 30%,
+            transparent 60%
+        ),
+        linear-gradient(
+            135deg,
+            #3d6686 0%,
+            #354f76 45%,
+            #30225d 100%
+        );
+
+    z-index: 9999;
+    overflow: hidden;
+    opacity: 1;
+
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+#welcomeScreen.d-none {
+    display: none !important;
+}
+
+
+/* =========================================================
+   LOGIN CARD
+   (stacked + vertically centered so nothing looks cramped)
+========================================================= */
+
+.welcome-card,
+.login-card,
+#welcomeScreen .card {
+    width: 100%;
+    max-width: 292px;
+    min-height: 430px;
+
+    padding: 30px 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(48, 39, 92, 0.98),
+            rgba(35, 28, 70, 0.98)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 28px !important;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.40),
+        inset 0 0 25px rgba(180, 107, 227, 0.08);
+
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+
+
+/* =========================================================
+   LOGIN ICON
+========================================================= */
+
+#welcomeScreen .login-icon {
+    width: 56px;
+    height: 56px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #b46be3, #7c3f9d);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+#welcomeScreen .login-icon i {
+    font-size: 26px;
+    color: white;
+}
+
+
+/* =========================================================
+   LOGIN TITLE + SUBTITLE
+========================================================= */
+
+#welcomeScreen .login-card h1 {
+    margin: 0 0 8px;
+
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+
+    color: white;
+}
+
+#welcomeScreen .login-subtitle {
+    margin: 0 0 22px;
+
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: center;
+
+    color: #f1d7ff;
+}
+
+/* ignore the <br> so the subtitle flows naturally */
+#welcomeScreen .login-subtitle br {
+    display: none;
+}
+
+
+/* =========================================================
+   LOGIN LABELS
+========================================================= */
+
+#welcomeScreen label {
+    display: block;
+
+    margin: 0 0 7px;
+
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* space between the name field and the password label */
+#welcomeScreen label[for="welcomePasswordInput"] {
+    margin-top: 14px;
+}
+
+
+/* =========================================================
+   LOGIN INPUTS
+========================================================= */
+
+#welcomeScreen input {
+    width: 100%;
+    height: 44px;
+
+    padding: 10px 14px;
+
+    border-radius: 14px;
+    border: 2px solid transparent;
+    outline: none;
+
+    background: #eeeef2;
+    color: #30225d;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#welcomeScreen input:focus {
+    border-color: #b46be3;
+    box-shadow: 0 0 0 3px rgba(180, 107, 227, 0.15);
+    outline: none;
+}
+
+#welcomeScreen input::placeholder {
+    color: #777;
+}
+
+
+/* =========================================================
+   LOGIN ERROR
+   (reserves space so the card never jumps)
+========================================================= */
+
+#welcomeError {
+    min-height: 20px;
+
+    margin: 10px 0 6px;
+
+    color: #ff4b4b !important;
+
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+#welcomeScreen button {
+    width: 100%;
+    min-height: 45px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #b46be3, #8d48b7);
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(137, 66, 181, 0.30);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+#welcomeScreen button i {
+    margin-left: 4px;
+}
+
+#welcomeScreen button:hover {
+    transform: translateY(-2px);
+
+    background: linear-gradient(135deg, #c179e9, #9951c4);
+
+    box-shadow: 0 12px 25px rgba(137, 66, 181, 0.42);
+}
+
+#welcomeScreen button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FADE ANIMATIONS
+========================================================= */
+
+.fade-out {
+    opacity: 0 !important;
+}
+
+.app-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+}
+
+
+/* =========================================================
    MAIN HEADER
-========================================= */
+========================================================= */
 
-.main-header {
-  width: 100%;
+#mainHeader {
+    width: 100%;
+    min-height: 104px;
 
-  background:
-    rgba(35, 25, 65, 0.88);
+    padding: 12px 24px;
 
-  border-bottom: 3px solid #b46be3;
+    background: rgba(35, 25, 65, 0.90);
 
-  box-shadow:
-    0 5px 20px rgba(0, 0, 0, 0.35);
+    border-bottom: 2px solid #b46be3;
 
-  backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-  position: relative;
-  z-index: 10;
+    position: relative;
+    z-index: 100;
+
+    opacity: 0;
+    transform: translateY(-15px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+#mainHeader.d-none {
+    display: none !important;
 }
 
 
-.header-content {
-  display: flex;
+/* =========================================================
+   HEADER TITLE
+========================================================= */
 
-  align-items: center;
+#mainHeader h1 {
+    margin: 0;
 
-  justify-content: space-between;
+    color: white;
 
-  padding: 20px 30px;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+#mainHeader p {
+    margin: 2px 0 0;
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
 
-/* =========================================
-   STUDENT PROFILE
-========================================= */
+/* =========================================================
+   PROFILE
+========================================================= */
 
-.student-profile {
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-}
-
-
+#mainHeader .profile-icon,
 .profile-icon {
-  width: 48px;
-  height: 48px;
+    width: 48px;
+    height: 48px;
 
-  display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  align-items: center;
+    border-radius: 50%;
 
-  justify-content: center;
+    background: linear-gradient(135deg, #9b59b6, #6c3d88);
 
-  border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 
-  font-size: 22px;
+    color: white;
 
-  color: white;
-
-  background:
-    linear-gradient(
-      135deg,
-      #9b59b6,
-      #6c3d88
-    );
-
-  border:
-    1px solid rgba(255, 255, 255, 0.5);
-
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
 }
 
 
-.student-details h4 {
-  margin: 0;
+/* =========================================================
+   PROFILE TEXT
+========================================================= */
 
-  font-family:
-    "Times New Roman",
-    Times,
-    serif;
+#studentNameDisplay {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
 
-  font-size: 16px;
-
-  color: white;
+#mainHeader .course-section {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 
-.student-details span {
-  font-size: 11px;
+/* =========================================================
+   CHANGE NAME BUTTON
+========================================================= */
 
-  letter-spacing: 2px;
+#changeNameBtn {
+    border: 1px solid #b46be3;
+    background: transparent;
+    color: white;
 
-  color: #e9d5ff;
+    border-radius: 5px;
+    padding: 2px 7px;
 
-  font-weight: bold;
+    font-size: 10px;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+#changeNameBtn:hover {
+    background: #b46be3;
+    color: white;
 }
 
 
-/* =========================================
-   PROJECT TITLE
-========================================= */
-
-.project-heading {
-  text-align: center;
-}
-
-
-.project-heading h1 {
-  margin: 0;
-
-  color: white;
-
-  font-size: 28px;
-
-  font-weight: bold;
-
-  letter-spacing: 4px;
-
-  text-shadow:
-    2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-
-.project-heading p {
-  margin: 3px 0 0;
-
-  color: #e9d5ff;
-
-  font-size: 9px;
-
-  letter-spacing: 3px;
-
-  font-weight: bold;
-}
-
-
-/* =========================================
+/* =========================================================
    YEAR BADGE
-========================================= */
+========================================================= */
 
-.header-badge {
-  padding: 8px 14px;
+.year-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-  border-radius: 20px;
+    min-width: 68px;
+    height: 38px;
 
-  color: white;
+    padding: 0 12px;
 
-  font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
 
-  font-size: 13px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
 
-  letter-spacing: 2px;
-
-  background:
-    rgba(255, 255, 255, 0.08);
-
-  border:
-    1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 
-/* =========================================
-   ATTENDANCE TITLE
-========================================= */
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
 
-.attendance-title {
-  text-align: center;
+#mainContent {
+    width: 100%;
 
-  font-weight: bold;
+    padding: 34px 24px 50px;
 
-  letter-spacing: 3px;
+    opacity: 0;
+    transform: translateY(15px);
+    visibility: hidden;
 
-  color: white;
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
 
-  margin-top: 15px;
+    overflow: visible;
+}
 
-  margin-bottom: 5px;
-
-  text-shadow:
-    1px 2px 5px rgba(0, 0, 0, 0.5);
+#mainContent.d-none {
+    display: none !important;
 }
 
 
-/* =========================================
-   MONTH TITLE
-========================================= */
+/* =========================================================
+   DASHBOARD CONTAINER
+========================================================= */
 
-.month-title {
-  border-bottom:
-    2px solid #c084fc;
-
-  padding: 8px;
-
-  margin-bottom: 8px;
-
-  font-weight: bold;
-
-  letter-spacing: 2px;
-
-  color: #f3e8ff;
+.dashboard-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 
-/* =========================================
+/* =========================================================
+   LEFT COLUMN
+========================================================= */
+
+.attendance-section {
+    width: 100%;
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 10px;
+
+    color: white;
+}
+
+.section-title h2 {
+    margin: 0;
+
+    color: white;
+
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.15;
+
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.section-title small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0;
+
+    text-shadow: none;
+}
+
+.section-subtitle {
+    margin-top: 5px;
+
+    color: #f1d7ff;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   PURPLE LINE
+========================================================= */
+
+.section-line {
+    width: 100%;
+    height: 2px;
+
+    margin: 8px 0;
+
+    background: #c66ee9;
+
+    box-shadow: 0 0 6px rgba(198, 110, 233, 0.35);
+}
+
+
+/* =========================================================
+   ATTENDANCE TABLE
+========================================================= */
+
+.attendance-table-wrapper,
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    border-radius: 12px;
+}
+
+.attendance-table {
+    width: 100%;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    overflow: hidden;
+    border-radius: 12px;
+
+    background: rgba(232, 237, 243, 0.88);
+    color: #18234a;
+
+    table-layout: fixed;
+}
+
+
+/* =========================================================
    TABLE HEADER
-========================================= */
+========================================================= */
 
-.log-header {
-  display: grid;
+.attendance-table thead th {
+    height: 44px;
 
-  grid-template-columns:
-    1fr 1.2fr 1.5fr;
+    padding: 8px 10px;
 
-  background:
-    rgba(30, 30, 55, 0.78);
+    background: #1e294d;
+    color: white;
 
-  border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
 
-  color: white;
+    border-right: 1px solid rgba(255, 255, 255, 0.45);
+}
 
-  font-weight: bold;
+.attendance-table thead th:first-child {
+    border-top-left-radius: 12px;
+}
 
-  padding: 10px;
-
-  margin-bottom: 5px;
-
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.35);
+.attendance-table thead th:last-child {
+    border-top-right-radius: 12px;
+    border-right: none;
 }
 
 
-.log-header div {
-  text-align: center;
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.attendance-table tbody td {
+    height: 38px;
+
+    padding: 7px 10px;
+
+    background: rgba(235, 239, 243, 0.88);
+    color: #18234a;
+
+    font-size: 15px;
+    text-align: center;
+
+    border-right: 1px solid #b7b4d7;
+    border-bottom: 1px solid #b7b4d7;
+}
+
+.attendance-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.attendance-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+.attendance-table tbody td:last-child {
+    border-right: none;
 }
 
 
-.log-header div:nth-child(1),
-.log-header div:nth-child(2) {
-  border-right:
-    1px solid rgba(255, 255, 255, 0.6);
+/* =========================================================
+   TABLE COLUMN WIDTHS
+========================================================= */
+
+/* DATE */
+.attendance-table th:nth-child(1),
+.attendance-table td:nth-child(1) {
+    width: 30%;
+}
+
+/* HOURS */
+.attendance-table th:nth-child(2),
+.attendance-table td:nth-child(2) {
+    width: 32%;
+}
+
+/* STATUS */
+.attendance-table th:nth-child(3),
+.attendance-table td:nth-child(3) {
+    width: 38%;
 }
 
 
-/* =========================================
-   CALENDAR ROW
-========================================= */
-
-.calendar-row {
-  display: grid;
-
-  grid-template-columns:
-    1fr 1.2fr 1.5fr;
-
-  text-align: center;
-
-  background:
-    rgba(255, 255, 255, 0.82);
-
-  color: #242033;
-
-  transition: 0.3s ease;
-}
-
-
-.calendar-row div {
-  padding: 6px;
-
-  border-right:
-    1px solid #b8a9c9;
-
-  border-bottom:
-    1px solid #b8a9c9;
-
-  min-height: 32px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-}
-
-
-.calendar-row div:last-child {
-  border-right: none;
-}
-
-
-.calendar-row:hover {
-  background:
-    rgba(225, 205, 255, 0.95);
-
-  transform: scale(1.01);
-}
-
-
-/* =========================================
+/* =========================================================
    HOURS INPUT
-========================================= */
+========================================================= */
 
 .hours-input {
-  width: 100%;
+    width: 100%;
+    max-width: 100px;
+    height: 32px;
 
-  border: none;
+    display: block;
+    margin: 0 auto;
 
-  outline: none;
+    padding: 4px 8px;
 
-  background: transparent;
+    border: 2px solid transparent;
+    border-radius: 8px;
 
-  text-align: center;
+    background: transparent;
+    color: #18234a;
 
-  color: #242033;
+    text-align: center;
 
-  font-size: 14px;
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 15px;
+    font-weight: bold;
 
-  font-weight: 500;
+    outline: none;
 
-  padding: 2px;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
 }
-
 
 .hours-input:focus {
-  background: #e9d5ff;
-
-  border-radius: 5px;
+    background: white;
+    border-color: #b46be3;
+    box-shadow: 0 0 0 2px rgba(180, 107, 227, 0.15);
 }
 
 
-/* =========================================
-   STATUS
-========================================= */
+/* =========================================================
+   STATUS COLORS
+========================================================= */
 
-.status-value {
-  font-weight: bold;
+.status-present {
+    color: #00853e !important;
+    font-weight: bold !important;
 }
 
-
-.status-value.ojt {
-  color: #176b3a;
+.status-absent {
+    color: #e32626 !important;
+    font-weight: bold !important;
 }
 
-
-.status-value.absent {
-  color: #c0392b;
+.status-invalid {
+    color: #e32626 !important;
+    font-weight: bold !important;
 }
-
-
-.status-value.invalid {
-  color: #ff0000;
-
-  font-weight: bold;
-
-  letter-spacing: 1px;
-}
-
 
 .status-holiday,
-.status-weekend {
-  font-weight: bold;
+.status-saturday,
+.status-sunday {
+    color: #69357e !important;
+    font-weight: bold !important;
+}
 
-  color: #5b2c6f;
+/* If JavaScript directly uses these text values */
+
+.attendance-table td.status-present {
+    color: #00853e !important;
+}
+
+.attendance-table td.status-absent {
+    color: #e32626 !important;
+}
+
+.attendance-table td.status-invalid {
+    color: #e32626 !important;
+}
+
+/* Classes actually used by script.js and index.html */
+
+.attendance-table td.present-status {
+    color: #00853e !important;
+    font-weight: bold !important;
+}
+
+.attendance-table td.absent-status,
+.attendance-table td.invalid-status {
+    color: #e32626 !important;
+    font-weight: bold !important;
+}
+
+.attendance-table td.holiday-status,
+.attendance-table td.weekend-status {
+    color: #69357e !important;
+    font-weight: bold !important;
 }
 
 
-/* =========================================
-   RIGHT SIDE
-========================================= */
+/* =========================================================
+   INPUT STATES
+========================================================= */
 
-.right-section {
-  padding: 15px 25px 30px;
+.hours-input.invalid {
+    border-color: #e32626 !important;
+    color: #e32626 !important;
+    background: rgba(255, 235, 235, 0.95);
+}
 
-  background: transparent !important;
+.hours-input.absent {
+    color: #e32626 !important;
+}
+
+.hours-input.present {
+    color: #00853e !important;
 }
 
 
-/* =========================================
-   SECTION HEADERS
-========================================= */
+/* =========================================================
+   OJT PROGRESS
+========================================================= */
 
-.summary-header,
-.weekly-heading {
-  display: flex;
+.progress-section {
+    width: 100%;
+}
 
-  align-items: center;
+.progress-title-wrapper,
+.planner-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
 
-  gap: 12px;
+.progress-icon,
+.planner-icon,
+.section-icon {
+    width: 42px;
+    height: 42px;
 
-  margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #b46be3, #7c3f9d);
+
+    color: white;
+    font-size: 20px;
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.20);
+}
+
+.progress-title,
+.planner-title {
+    margin: 0;
+
+    color: white;
+
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.22);
+}
+
+.progress-subtitle,
+.planner-subtitle {
+    margin: 0;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
 }
 
 
-.summary-icon,
-.planner-heading-icon {
-  width: 40px;
+/* =========================================================
+   PROGRESS CARD
+========================================================= */
 
-  height: 40px;
+.progress-card {
+    width: 100%;
 
-  display: flex;
+    border-radius: 13px;
+    overflow: hidden;
 
-  align-items: center;
+    background: rgba(240, 242, 246, 0.92);
 
-  justify-content: center;
+    border: 1px solid #b46be3;
 
-  border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
 
-  background:
-    linear-gradient(
-      135deg,
-      #9b59b6,
-      #5b2c6f
-    );
+.progress-row {
+    min-height: 49px;
 
-  color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.3);
+    color: #30225d;
+
+    border-bottom: 1px solid #b46be3;
+}
+
+.progress-row:last-child {
+    border-bottom: none;
+}
+
+.progress-label,
+.progress-row > span {
+    flex: 1;
+    padding: 10px 14px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.progress-value,
+.progress-row > strong {
+    min-width: 165px;
+
+    padding: 10px 14px;
+
+    text-align: right;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    border-left: 1px solid #b46be3;
 }
 
 
-.summary-header h3,
-.weekly-title {
-  margin: 0;
-
-  color: white;
-
-  font-weight: bold;
-
-  letter-spacing: 2px;
-
-  text-shadow:
-    1px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-
-.summary-header p,
-.weekly-heading p {
-  margin: 0;
-
-  font-size: 10px;
-
-  color: #e9d5ff;
-}
-
-
-/* =========================================
-   HOURS SUMMARY
-========================================= */
-
-.hours-summary {
-  width: 100%;
-
-  border:
-    1px solid #b46be3;
-
-  background:
-    rgba(255, 255, 255, 0.88);
-
-  border-radius: 12px;
-
-  overflow: hidden;
-
-  margin-bottom: 28px;
-
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.3);
-}
-
-
-.hours-row {
-  display: flex;
-
-  align-items: center;
-
-  min-height: 48px;
-
-  border-bottom:
-    1px solid #d5b6e8;
-}
-
-
-.hours-row:last-child {
-  border-bottom: none;
-}
-
-
-.summary-label {
-  width: 58%;
-
-  padding: 12px 15px;
-
-  border-right:
-    1px solid #a855c7;
-
-  color: #4b315c;
-
-  font-weight: bold;
-}
-
-
-.hours-row strong {
-  width: 42%;
-
-  padding: 12px 15px;
-
-  text-align: right;
-
-  color: #283747;
-}
-
-
-/* =========================================
+/* =========================================================
    WEEKLY PLANNER
-========================================= */
+========================================================= */
 
-.weekly-section {
-  background: transparent !important;
+.planner-section {
+    width: 100%;
+    margin-top: 28px;
 }
 
-
-/* PLANNER CARD */
+.planner-container {
+    width: 100%;
+}
 
 .planner-card {
-  background:
-    rgba(25, 25, 50, 0.85);
+    width: 100%;
+    min-height: 80px;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.35);
+    margin-bottom: 7px;
+    padding: 6px 16px;
 
-  padding: 16px 14px;
+    display: block;
 
-  margin-bottom: 12px;
+    background: rgba(24, 26, 62, 0.90);
 
-  border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 13px;
 
-  color: white;
+    color: white;
 
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 
-  backdrop-filter: blur(6px);
+    overflow: hidden;
+}
 
-  transition: 0.3s ease;
+.planner-day,
+.day-name {
+    color: #f0d5ff;
 
-  min-height: 70px;
+    font-size: 16px;
+    font-weight: bold;
+
+    padding-right: 15px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.planner-schedule,
+.schedule {
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.planner-schedule div,
+.schedule div {
+    margin-bottom: 2px;
+}
+
+.planner-schedule div:last-child,
+.schedule div:last-child {
+    margin-bottom: 0;
+}
+
+.faculty {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 
-.planner-card:hover {
-  transform: translateY(-3px);
+/* =========================================================
+   D-NONE
+========================================================= */
 
-  background:
-    rgba(65, 40, 100, 0.95);
-
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.45);
+.d-none {
+    display: none !important;
 }
 
 
-/* DAY */
+/* =========================================================
+   BOOTSTRAP OVERRIDES
+========================================================= */
 
-.planner-day {
-  border-right:
-    2px solid rgba(255, 255, 255, 0.45);
-
-  font-weight: bold;
-
-  font-size: 14px;
-
-  color: #f0d5ff;
-
-  padding-right: 10px;
+.container-fluid {
+    width: 100%;
 }
 
 
-/* TIME */
+/* =========================================================
+   INPUT TYPE TIME
+========================================================= */
 
-.planner-time {
-  font-size: 12px;
+input[type="time"] {
+    font-family: "Times New Roman", Times, serif !important;
+    text-align: center;
+}
 
-  line-height: 1.7;
+input[type="time"]::-webkit-datetime-edit {
+    font-family: "Times New Roman", Times, serif !important;
+    text-align: center;
+}
 
-  color: white;
+input[type="time"]::-webkit-datetime-edit-fields-wrapper {
+    font-family: "Times New Roman", Times, serif !important;
+}
 
-  padding-left: 14px;
+input[type="time"]::-webkit-datetime-edit-text {
+    font-family: "Times New Roman", Times, serif !important;
+}
 
-  font-weight: 500;
-
-  overflow-wrap: break-word;
+input[type="time"]::-webkit-datetime-edit-hour-field,
+input[type="time"]::-webkit-datetime-edit-minute-field {
+    font-family: "Times New Roman", Times, serif !important;
 }
 
 
-/* =========================================
-   MOBILE RESPONSIVE
-========================================= */
+/* =========================================================
+   TABLE HOVER
+========================================================= */
+
+.attendance-table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   DASHBOARD LAYOUT
+   (matches the class names used in index.html)
+========================================================= */
+
+/* ---------- HEADER: profile | title | year ---------- */
+
+#mainHeader {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+}
+
+#mainHeader .profile-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    justify-self: start;
+    min-width: 0;
+}
+
+.profile-information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+
+    min-width: 0;
+}
+
+.student-course {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.change-name-button {
+    margin-top: 4px;
+}
+
+#mainHeader .header-title {
+    justify-self: center;
+    text-align: center;
+}
+
+#mainHeader .year-badge {
+    justify-self: end;
+}
+
+
+/* ---------- CONTENT WIDTH ---------- */
+
+#mainContent .container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+/* ---------- LEFT SIDE ---------- */
+
+.section-heading {
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid #c66ee9;
+
+    box-shadow: 0 2px 6px -2px rgba(198, 110, 233, 0.35);
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    color: white;
+
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.15;
+
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.month-title {
+    margin: 24px 0 10px;
+    padding-left: 10px;
+
+    border-left: 4px solid #c66ee9;
+
+    color: #f1d7ff;
+
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.section-heading + .month-title {
+    margin-top: 4px;
+}
+
+.table-wrapper {
+    margin-bottom: 8px;
+}
+
+
+/* ---------- RIGHT SIDE ---------- */
+
+.right-column {
+    width: 100%;
+}
+
+.planner-heading {
+    margin-top: 28px;
+}
+
+.progress-row > span i {
+    margin-right: 8px;
+    color: #8d48b7;
+}
+
+
+/* ---------- WEEKLY PLANNER ROWS ---------- */
+
+.day-row {
+    display: grid;
+    grid-template-columns: 145px 1fr;
+    gap: 15px;
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.day-row:last-child {
+    border-bottom: none;
+}
+
+.schedule .faculty {
+    margin-top: 4px;
+    color: #f1d7ff;
+}
+
+
+/* =========================================================
+   DASHBOARD UPGRADE
+========================================================= */
+
+/* ---------- header: year badge + window buttons ---------- */
+
+#mainHeader {
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.28);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    justify-self: end;
+}
+
+.window-controls {
+    display: none;
+    gap: 6px;
+}
+
+html.electron-window .window-controls {
+    display: flex;
+}
+
+.win-btn {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+
+    font-size: 13px;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.win-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.win-close:hover {
+    background: #e32626;
+    border-color: #e32626;
+}
+
+
+/* ---------- month blocks: title sticks while its table scrolls ---------- */
+
+.month-block + .month-block {
+    margin-top: 22px;
+}
+
+.month-block > .month-title {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    padding: 0 14px;
+
+    border-radius: 10px 10px 0 0;
+
+    background: rgba(35, 25, 65, 0.86);
+
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.section-heading + .month-block > .month-title {
+    margin-top: 4px;
+}
+
+
+/* ---------- attendance table polish ---------- */
+
+.attendance-table {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.attendance-table tbody td {
+    transition: background 0.15s ease;
+}
+
+/* status dot in front of every status */
+
+.attendance-table td.present-status::before,
+.attendance-table td.absent-status::before,
+.attendance-table td.invalid-status::before,
+.attendance-table td.holiday-status::before,
+.attendance-table td.weekend-status::before {
+    content: "";
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    vertical-align: 1px;
+}
+
+/* soft tint behind each status */
+
+.attendance-table td.present-status {
+    background: rgba(0, 133, 62, 0.10);
+}
+
+.attendance-table td.absent-status,
+.attendance-table td.invalid-status {
+    background: rgba(227, 38, 38, 0.09);
+}
+
+.attendance-table td.holiday-status,
+.attendance-table td.weekend-status {
+    background: rgba(105, 53, 126, 0.09);
+}
+
+/* today's row */
+
+.attendance-table tr.today-row td {
+    background: rgba(180, 107, 227, 0.20);
+
+    box-shadow:
+        inset 0 2px 0 #b46be3,
+        inset 0 -2px 0 #b46be3;
+}
+
+.attendance-table tr.today-row td:first-child {
+    box-shadow:
+        inset 4px 0 0 #b46be3,
+        inset 0 2px 0 #b46be3,
+        inset 0 -2px 0 #b46be3;
+}
+
+.attendance-table tr.today-row td:last-child {
+    box-shadow:
+        inset -2px 0 0 #b46be3,
+        inset 0 2px 0 #b46be3,
+        inset 0 -2px 0 #b46be3;
+}
+
+.attendance-table tr.today-row td:first-child::after {
+    content: "TODAY";
+
+    margin-left: 8px;
+    padding: 2px 7px;
+
+    border-radius: 20px;
+
+    background: #b46be3;
+    color: white;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    vertical-align: 1px;
+}
+
+
+/* ---------- progress meter (inside the progress card) ---------- */
+
+.progress-meter {
+    padding: 12px 14px 14px;
+
+    color: #30225d;
+}
+
+.meter-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.meter-track {
+    height: 10px;
+
+    border-radius: 99px;
+
+    background: rgba(48, 34, 93, 0.16);
+
+    overflow: hidden;
+}
+
+.meter-fill {
+    width: 0;
+    height: 100%;
+
+    border-radius: 99px;
+
+    background: linear-gradient(90deg, #b46be3, #3fb0b0);
+
+    transition: width 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ---------- stat tiles ---------- */
+
+.stat-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.stat-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+    padding: 12px 8px;
+
+    border-radius: 13px;
+
+    background: rgba(24, 26, 62, 0.74);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.stat-number {
+    color: white;
+
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.stat-label {
+    color: #f1d7ff;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.stat-tile.is-present .stat-number {
+    color: #5ee6a0;
+}
+
+.stat-tile.is-absent .stat-number {
+    color: #ff8a8a;
+}
+
+
+/* ---------- planner: highlight today's day ---------- */
+
+.day-row.is-today {
+    margin: 0 -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border-radius: 10px;
+    border-bottom-color: transparent;
+
+    background: rgba(180, 107, 227, 0.20);
+}
+
+.day-row.is-today .day-name::before {
+    content: "";
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: #5ee6a0;
+
+    vertical-align: 1px;
+}
+
+
+/* ---------- app-style layout on desktop: each column scrolls ---------- */
+
+@media (min-width: 992px) {
+
+    #appContainer {
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+
+        overflow: hidden;
+    }
+
+    #mainHeader {
+        flex: 0 0 auto;
+    }
+
+    #mainContent {
+        flex: 1 1 auto;
+        min-height: 0;
+
+        padding: 26px 24px 20px;
+
+        overflow: hidden;
+    }
+
+    #mainContent .container-fluid,
+    #mainContent .row {
+        height: 100%;
+    }
+
+    #mainContent .row {
+        --bs-gutter-y: 0;
+        margin-top: 0;
+    }
+
+    #mainContent .row > [class*="col-"] {
+        height: 100%;
+        margin-top: 0;
+        padding-bottom: 6px;
+
+        overflow-y: auto;
+
+        scrollbar-width: thin;
+        scrollbar-color: #9b59b6 transparent;
+    }
+
+    /* month title + column headings both stay pinned while scrolling */
+
+    .table-wrapper,
+    .attendance-table {
+        overflow: visible;
+    }
+
+    .attendance-table thead th {
+        position: sticky;
+        top: 44px;
+        z-index: 4;
+    }
+
+    .attendance-table thead th:first-child,
+    .attendance-table thead th:last-child {
+        border-radius: 0;
+    }
+
+    #mainContent .row > [class*="col-"]::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #mainContent .row > [class*="col-"]::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    #mainContent .row > [class*="col-"]::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #b46be3, #6c3d88);
+        border-radius: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    #mainContent {
+        padding: 25px 18px 40px;
+    }
+
+    .day-row {
+        grid-template-columns: 125px 1fr;
+    }
+
+    .progress-value,
+    .progress-row > strong {
+        min-width: 145px;
+    }
+
+}
+
 
 @media (max-width: 768px) {
 
+    #mainHeader {
+        min-height: 95px;
+        padding: 10px 15px;
 
-  .header-content {
-    flex-direction: column;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "profile badge"
+            "title title";
+        row-gap: 8px;
+    }
 
-    gap: 12px;
+    #mainHeader .profile-area {
+        grid-area: profile;
+    }
 
-    text-align: center;
-  }
+    #mainHeader .header-right {
+        grid-area: badge;
+    }
+
+    #mainHeader .header-title {
+        grid-area: title;
+    }
+
+    #mainHeader h1 {
+        font-size: 25px;
+    }
+
+    #mainHeader p {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    #mainContent {
+        padding: 20px 14px 40px;
+    }
+
+    .section-title h2 {
+        font-size: 25px;
+    }
+
+    .progress-title,
+    .planner-title {
+        font-size: 25px;
+    }
+
+    .attendance-table {
+        min-width: 650px;
+    }
+
+    .attendance-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .planner-card {
+        padding: 4px 13px;
+    }
+
+    .day-row {
+        grid-template-columns: 110px 1fr;
+    }
+
+    .planner-day,
+    .day-name {
+        font-size: 14px;
+    }
+
+    .planner-schedule,
+    .schedule {
+        font-size: 12px;
+    }
+
+}
 
 
-  .project-heading h1 {
-    font-size: 23px;
-  }
+@media (max-width: 576px) {
+
+    #welcomeScreen {
+        padding: 12px;
+    }
+
+    #welcomeScreen .card,
+    .welcome-card,
+    .login-card {
+        max-width: 292px;
+        min-height: 430px;
+        border-radius: 28px !important;
+    }
+
+    #mainContent {
+        padding: 18px 10px 35px;
+    }
+
+    .progress-row {
+        display: block;
+    }
+
+    .progress-label,
+    .progress-row > span {
+        display: block;
+        width: 100%;
+    }
+
+    .progress-value,
+    .progress-row > strong {
+        display: block;
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #b46be3;
+        text-align: left;
+    }
+
+    .day-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .planner-day,
+    .day-name {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+        padding-bottom: 7px;
+        padding-right: 0;
+    }
+
+}
 
 
-  .log-header,
-  .calendar-row {
-    grid-template-columns:
-      1fr 1fr 1.2fr;
+/* =========================================================
+   ELECTRON LOGIN WINDOW (rounded, transparent window)
+   welcome.js adds "electron-window" to <html> when running in
+   Electron, and "login-mode" while the login screen is showing.
+   The window itself is transparent, so the card's rounded
+   corners are the real corners of the window.
+========================================================= */
 
-    font-size: 11px;
-  }
+html.electron-window.login-mode,
+html.electron-window.login-mode body {
+    background: transparent !important;
+    overflow: hidden;
+}
+
+html.electron-window.login-mode #welcomeScreen {
+    background: transparent;
+    padding: 0;
+}
+
+html.electron-window #welcomeScreen .login-card {
+    width: 100%;
+    max-width: none;
+
+    height: 100%;
+    min-height: 0;
+
+    border-radius: 28px !important;
+
+    box-shadow: none;
+}
 
 
-  .right-section {
-    padding: 15px;
-  }
+/* =========================================================
+   LOGIN ANIMATIONS
+========================================================= */
+
+@keyframes cardIn {
+    from { opacity: 0; transform: scale(0.92) translateY(18px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes iconPop {
+    0%   { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+    60%  { opacity: 1; transform: scale(1.12) rotate(3deg); }
+    100% { opacity: 1; transform: none; }
+}
+
+@keyframes iconRing {
+    0%   { box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(180, 107, 227, 0.45); }
+    70%, 100% { box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25), 0 0 0 16px rgba(180, 107, 227, 0); }
+}
+
+@keyframes orbA {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(-40px, 50px) scale(1.25); }
+}
+
+@keyframes orbB {
+    from { transform: translate(0, 0) scale(1.1); }
+    to   { transform: translate(50px, -40px) scale(0.9); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes errorIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: none; }
+}
 
 
-  .planner-card {
-    min-height: auto;
+/* Card pops in when the window opens */
 
-    padding: 14px;
-  }
-
-
-  .planner-day {
-    border-right: none;
-
-    border-bottom:
-      1px solid rgba(255, 255, 255, 0.35);
-
-    padding-bottom: 8px;
-
-    margin-bottom: 8px;
-  }
+#welcomeScreen .login-card {
+    animation: cardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
 
 
-  .planner-time {
-    padding-left: 0;
+/* Soft glowing orbs drifting behind the content */
+
+#welcomeScreen .login-card::before,
+#welcomeScreen .login-card::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#welcomeScreen .login-card::before {
+    top: -90px;
+    right: -90px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(180, 107, 227, 0.32), transparent 65%);
+    animation: orbA 9s ease-in-out infinite alternate;
+}
+
+#welcomeScreen .login-card::after {
+    bottom: -100px;
+    left: -100px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(63, 176, 176, 0.24), transparent 65%);
+    animation: orbB 11s ease-in-out infinite alternate;
+}
+
+
+/* Everything inside the card rises in, one after another */
+
+#welcomeScreen .login-card > * {
+    position: relative;
+    z-index: 1;
+
+    animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+    animation-delay: calc(0.2s + var(--i, 0) * 0.06s);
+}
+
+#welcomeScreen .login-card > :nth-child(1) { --i: 0; }
+#welcomeScreen .login-card > :nth-child(2) { --i: 1; }
+#welcomeScreen .login-card > :nth-child(3) { --i: 2; }
+#welcomeScreen .login-card > :nth-child(4) { --i: 3; }
+#welcomeScreen .login-card > :nth-child(5) { --i: 4; }
+#welcomeScreen .login-card > :nth-child(6) { --i: 5; }
+#welcomeScreen .login-card > :nth-child(7) { --i: 6; }
+#welcomeScreen .login-card > :nth-child(8) { --i: 7; }
+#welcomeScreen .login-card > :nth-child(9) { --i: 8; }
+
+
+/* Icon: pops in, then gives off a slow pulse ring */
+
+#welcomeScreen .login-icon {
+    animation:
+        iconPop 0.75s cubic-bezier(0.2, 0.9, 0.3, 1.2) 0.2s backwards,
+        iconRing 2.8s ease-out 1.3s infinite;
+}
+
+
+/* Error message fades in when it appears */
+
+#welcomeScreen #welcomeError:not(:empty) {
+    animation: errorIn 0.3s ease backwards;
+}
+
+
+/* Inputs + labels react when you click into a field */
+
+#welcomeScreen label {
+    transition: color 0.2s ease;
+}
+
+#welcomeScreen label:has(+ input:focus) {
+    color: #e6c2ff;
+}
+
+#welcomeScreen input {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+#welcomeScreen input:focus {
+    background: #ffffff;
+    transform: translateY(-1px);
+}
+
+
+/* Button: light sweep + arrow nudge on hover, spinner while entering */
+
+#welcomeScreen .enter-button {
+    position: relative;
+    overflow: hidden;
+}
+
+#welcomeScreen .enter-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+#welcomeScreen .enter-button:hover::before {
+    left: 130%;
+}
+
+#welcomeScreen .enter-button i {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+#welcomeScreen .enter-button:hover i {
+    transform: translateX(4px);
+}
+
+#welcomeScreen .enter-button.is-loading {
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+#welcomeScreen .enter-button.is-loading i {
+    display: none;
+}
+
+#welcomeScreen .enter-button.is-loading::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 8px;
+    vertical-align: -2px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+
+/* Respect "reduce motion" system setting */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #welcomeScreen .login-card,
+    #welcomeScreen .login-card > *,
+    #welcomeScreen .login-card::before,
+    #welcomeScreen .login-card::after,
+    #welcomeScreen .login-icon {
+        animation: none !important;
+    }
+
+}
+
+
+/* =========================================================
+   LOGIN CLOSE BUTTON + DRAG (Electron only)
+========================================================= */
+
+#welcomeScreen .login-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 30px;
+    height: 30px;
+    min-height: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: #f1d7ff;
 
     font-size: 12px;
-  }
+
+    box-shadow: none;
+
+    z-index: 3;
+}
+
+#welcomeScreen .login-close:hover {
+    transform: none;
+    background: #e32626;
+    box-shadow: none;
+}
+
+#welcomeScreen .login-close:active {
+    transform: scale(0.94);
+}
+
+html.electron-window #welcomeScreen .login-close {
+    display: flex;
+}
+
+/* drag the login window by any empty part of the card */
+
+html.electron-window #welcomeScreen .login-card {
+    -webkit-app-region: drag;
+}
+
+html.electron-window #welcomeScreen input,
+html.electron-window #welcomeScreen button,
+html.electron-window #welcomeScreen label {
+    -webkit-app-region: no-drag;
+}
 
 
+/* =========================================================
+   FINAL ROUNDING FIX
+========================================================= */
+
+#welcomeScreen .card,
+#welcomeScreen .welcome-card,
+#welcomeScreen .login-card {
+    border-radius: 28px !important;
+    overflow: hidden !important;
+}
+
+/* Remove accidental white backgrounds from Bootstrap cards */
+
+#welcomeScreen .card-body {
+    background: transparent !important;
+    border-radius: inherit !important;
 }
